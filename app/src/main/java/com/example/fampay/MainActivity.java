@@ -124,6 +124,9 @@ public class MainActivity extends AppCompatActivity {
                                     HC1Card hc1Card = new HC1Card();
                                     hc1Card.setText(jsonObject1.getString("title"));
                                     hc1Card.setURL(jsonObject1.getJSONObject("icon").getString("image_url"));
+                                    if(jsonObject1.has("bg_color")){
+                                        hc1Card.setBgColor(jsonObject1.getString("bg_color"));
+                                    }
                                     Log.i("Text", hc1Card.getText());
                                     Log.i("URL", hc1Card.getURL());
                                     HC1CardList.add(hc1Card);
@@ -152,6 +155,9 @@ public class MainActivity extends AppCompatActivity {
                                     hc3Card.setText(jsonObject1.getString("title"));
                                     hc3Card.setDesc(jsonObject1.getString("description"));
                                     hc3Card.setURL(jsonObject1.getJSONObject("bg_image").getString("image_url"));
+                                    hc3Card.setBgColor(jsonObject1.getJSONArray("cta").getJSONObject(0).getString("bg_color"));
+                                    hc3Card.setTextColor(jsonObject1.getJSONArray("cta").getJSONObject(0).getString("text_color"));
+                                    hc3Card.setButtontext(jsonObject1.getJSONArray("cta").getJSONObject(0).getString("text"));
                                     HC3CardList.add(hc3Card);
                                     HC3Adapter.notifyDataSetChanged();
                                 }

@@ -1,11 +1,13 @@
 package com.example.fampay;
 
 import android.content.Context;
+import android.graphics.Color;
 import android.graphics.drawable.Drawable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -53,6 +55,7 @@ public class HC1Adapter extends RecyclerView.Adapter<HC1Adapter.ViewHolder> {
                         return false;
                     }
                 }).into(holder.ivCard);
+//        holder.llHC1.setBackgroundColor(Color.parseColor(HC1Card.getBgColor()));
     }
 
     @Override
@@ -63,10 +66,12 @@ public class HC1Adapter extends RecyclerView.Adapter<HC1Adapter.ViewHolder> {
     public static class ViewHolder extends RecyclerView.ViewHolder{
         TextView tvCard;
         ImageView ivCard;
+        LinearLayout llHC1;
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             tvCard=itemView.findViewById(R.id.tvHC6);
             ivCard=itemView.findViewById(R.id.ivHC6);
+            llHC1=itemView.findViewById(R.id.llHC1);
         }
     }
 }

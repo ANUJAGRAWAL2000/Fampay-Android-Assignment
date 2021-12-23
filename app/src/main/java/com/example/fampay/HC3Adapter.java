@@ -56,6 +56,9 @@ public class HC3Adapter extends RecyclerView.Adapter<HC3Adapter.ViewHolder> {
                         return false;
                     }
                 }).into(holder.ivCard);
+        holder.button.setBackgroundColor(Color.parseColor(HC3Card.getBgColor()));
+        holder.button.setText(HC3Card.getButtontext());
+        holder.button.setTextColor(Color.parseColor(HC3Card.getTextColor()));
     }
 
     @Override
